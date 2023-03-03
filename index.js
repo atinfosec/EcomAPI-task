@@ -13,7 +13,7 @@ sequelize
   .then(() => {
     console.log(`DB connection Successful`);
     sequelize
-      .sync({ alter: true })
+      .sync()
       .then(() => {
         console.log(`Model Synced`);
       })
