@@ -1,0 +1,592 @@
+{
+	"info": {
+		"_postman_id": "fd9854d0-f55d-470e-b098-060d11034097",
+		"name": "leadsconnect_task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24760068"
+	},
+	"item": [
+		{
+			"name": "Product Routes",
+			"item": [
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sample Product\",\r\n    \"title\": \"Sample product title\",\r\n    \"description\": \"Sample description\",\r\n    \"price\": 800,\r\n    \"stock\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/product/createproduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"createproduct"
+							]
+						},
+						"description": "1. **Action**: Creates a product.\n2. **Authentication required**: Yes\n3. **Authorized role**: admin"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productid\": 1,\r\n    \"name\": \"Sample Product\",\r\n    \"title\": \"Sample updated product title\",\r\n    \"description\": \"Sample description\",\r\n    \"price\": 900,\r\n    \"stock\": 50\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/product/updateproduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"updateproduct"
+							]
+						},
+						"description": "1. **Action**: Updates a product.\n2. **Authentication required**: Yes\n3. **Authorized role**: admin"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productid\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/product/deleteproduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"deleteproduct"
+							]
+						},
+						"description": "1. **Action**: Deletes a product.\n2. **Authentication required**: Yes\n3. **Authorized role**: admin"
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/product/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"products"
+							]
+						},
+						"description": "1. **Action**: Fetch all the products.\n2. **Authentication required**: No"
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch Product by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/product/getproduct/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"getproduct",
+								"2"
+							]
+						},
+						"description": "1. **Action**: Fetch a specific product.\n2. **Authentication required**: No"
+					},
+					"response": []
+				},
+				{
+					"name": "Add To Cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productid\": 4,\r\n    \"quantity\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/product/addtocart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"addtocart"
+							]
+						},
+						"description": "1. **Action**: Add product to cart.\n2. **Authentication required**: Yes\n3. **Authorized role**: customer"
+					},
+					"response": []
+				},
+				{
+					"name": "Get User cart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/product/getcart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"getcart"
+							]
+						},
+						"description": "1. **Action**: Get cart.\n2. **Authentication required**: Yes\n3. **Authorized role**: customer"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Item From Cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productid\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/product/deletefromcart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"deletefromcart"
+							]
+						},
+						"description": "1. **Action**: Delete a product from cart.\n2. **Authentication required**: Yes\n3. **Authorized role**: customer"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productid\": 2,\r\n    \"comment\": \"Best Product I have ever seen\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/product/addcomment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"addcomment"
+							]
+						},
+						"description": "1. **Action**: Add a comment for a product.\n2. **Authentication required**: Yes\n3. **Authorized role**: customer"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"commentid\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/product/deletecomment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"deletecomment"
+							]
+						},
+						"description": "1. **Action**: Delete a product from cart.\n2. **Authentication required**: Yes\n3. **Authorized role**: customer"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"commentid\": 1,\r\n    \"updatedcomment\": \"This is awesome product\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/product/updatecomment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"updatecomment"
+							]
+						},
+						"description": "1. **Action**: Update a comment.\n2. **Authentication required**: Yes\n3. **Authorized role**: customer"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Routes",
+			"item": [
+				{
+					"name": "Create Customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"manish\",\r\n    \"email\": \"manish@gmail.com\",\r\n    \"firstname\": \"Manish\",\r\n    \"lastname\": \"Verma\",\r\n    \"password\": \"test123\",\r\n    \"contact\": \"1111111111\",\r\n    \"address\": \"sample address\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/user/createuser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"createuser"
+							]
+						},
+						"description": "1. **Action**: Customer Sign Up\n2. **Authentication required**: No"
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"manish\",\r\n    \"password\": \"test123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						},
+						"description": "1. **Action**: Login User.\n2. **Authentication required**: No"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Customer Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/user/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"profile"
+							]
+						},
+						"description": "1. **Action**: Get Profile of Customer\n2. **Authentication required**: Yes\n3. **Authorized role**: customer"
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/user/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"logout"
+							]
+						},
+						"description": "1. **Action**: Customer Logout.\n2. **Authentication required**: Yes\n3. **Authorized role**: customer"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order Routes",
+			"item": [
+				{
+					"name": "Place Order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/order/placeorder",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"order",
+								"placeorder"
+							]
+						},
+						"description": "1. **Action**: Place order by Customer\n2. **Authentication required**: Yes\n3. **Authorized role**: customer"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all orders of a user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/order/getorderlist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"order",
+								"getorderlist"
+							]
+						},
+						"description": "1. **Action**: Get customer's orders list.\n2. **Authentication required**: Yes\n3. **Authorized role**: customer"
+					},
+					"response": []
+				},
+				{
+					"name": "Get order detail of user by order id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderid\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/order/getorderdetail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"order",
+								"getorderdetail"
+							]
+						},
+						"description": "1. **Action**: Get order details by order id.\n2. **Authentication required**: Yes\n3. **Authorized role**: customer"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Order status of customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderid\": 1,\r\n    \"orderstatus\": \"Shipped\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/order/updateorderstatus",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"order",
+								"updateorderstatus"
+							]
+						},
+						"description": "1. **Action**: Update order status of a customer.\n2. **Authentication required**: Yes\n3. **Authorized role**: admin"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Seed Users in User table",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/seedusers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"seedusers"
+					]
+				},
+				"description": "Fills User table in database with three sample users.\n\n1. admin: test123\n2. manish: test123\n3. rahul: test123"
+			},
+			"response": []
+		},
+		{
+			"name": "Seed Sample Products in Products Table",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/seedproducts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"seedproducts"
+					]
+				},
+				"description": "Fills product table with four sample products."
+			},
+			"response": []
+		}
+	]
+}
